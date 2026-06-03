@@ -5,41 +5,45 @@
 class Toolshed < Formula
   desc "A small, serious-looking collection of command-line tools"
   homepage "https://github.com/danielriddell21/toolshed"
-  version "0.0.1"
+  version "0.0.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/danielriddell21/toolshed/releases/download/v0.0.1/toolshed_0.0.1_darwin_amd64.tar.gz"
-      sha256 "5a6e0908dc1a6de2c68f1b616d729dd1330ba0f9c6fa6ef0478fa9084684ad8d"
+      url "https://github.com/danielriddell21/toolshed/releases/download/v0.0.2/toolshed_0.0.2_darwin_amd64.tar.gz"
+      sha256 "15e69e89e2360714b8ac01dad75b42f22bf167b12418c1cccf3cabb83cc57c86"
 
       define_method(:install) do
-        bin.install "crabs", "duck", "fish", "garden", "snail"
+        bin.install "crabs", "duck", "fish", "fractal", "garden", "life", "markov", "maze", "sandbox", "snail", "turing"
+        bin.install_symlink bin/"fish" => "aquarium"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/danielriddell21/toolshed/releases/download/v0.0.1/toolshed_0.0.1_darwin_arm64.tar.gz"
-      sha256 "7c9aa4c8479b4898d13ab8a2398a94bf61a4c7b90ca60b7afa49ce2f9ffcc93e"
+      url "https://github.com/danielriddell21/toolshed/releases/download/v0.0.2/toolshed_0.0.2_darwin_arm64.tar.gz"
+      sha256 "9df254bfb4362f59cb738f94907d3dae47b9737144b4896ecb4e5ac90cbc7cba"
 
       define_method(:install) do
-        bin.install "crabs", "duck", "fish", "garden", "snail"
+        bin.install "crabs", "duck", "fish", "fractal", "garden", "life", "markov", "maze", "sandbox", "snail", "turing"
+        bin.install_symlink bin/"fish" => "aquarium"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielriddell21/toolshed/releases/download/v0.0.1/toolshed_0.0.1_linux_amd64.tar.gz"
-      sha256 "19dbb0242201f04e80f59d3ec6294013c48d642493cdd2575f5fa45df6206ce6"
+      url "https://github.com/danielriddell21/toolshed/releases/download/v0.0.2/toolshed_0.0.2_linux_amd64.tar.gz"
+      sha256 "18154b385f2316e290c0aad5117e9b129a3fcf0c27444e5e78d17ad1bcf234aa"
       define_method(:install) do
-        bin.install "crabs", "duck", "fish", "garden", "snail"
+        bin.install "crabs", "duck", "fish", "fractal", "garden", "life", "markov", "maze", "sandbox", "snail", "turing"
+        bin.install_symlink bin/"fish" => "aquarium"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielriddell21/toolshed/releases/download/v0.0.1/toolshed_0.0.1_linux_arm64.tar.gz"
-      sha256 "5af3cfad57e74efe8ea820fb3124710b358c88e98e412e925273c0788a5b03a9"
+      url "https://github.com/danielriddell21/toolshed/releases/download/v0.0.2/toolshed_0.0.2_linux_arm64.tar.gz"
+      sha256 "cd864e086422b9fb46d362b3480dd32ed88d7f92979c8817cb4d02057a35f709"
       define_method(:install) do
-        bin.install "crabs", "duck", "fish", "garden", "snail"
+        bin.install "crabs", "duck", "fish", "fractal", "garden", "life", "markov", "maze", "sandbox", "snail", "turing"
+        bin.install_symlink bin/"fish" => "aquarium"
       end
     end
   end
