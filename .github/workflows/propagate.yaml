@@ -1,0 +1,119 @@
+# Propagate tap App credentials to all Homebrew repos under danielriddell21.
+#
+# Two-credential model — keep these straight:
+#   1. TAP App  (vars.TAP_APP_ID + secrets.TAP_APP_PRIVATE_KEY)
+#        The credentials being PROPAGATED. Downstream repos use these to mint a
+#        short-lived GitHub App token that can push formula/cask updates back to
+#        this tap. They are payload here, not used to authenticate this workflow.
+#        NOTE: a GitHub App's private key cannot be read back from the API/an
+#        action after creation (it is shown once at generation time), so the only
+#        viable source for the PEM is this repo's secret store — there is no
+#        "fetch the PEM from the App" action to use instead.
+#   2. ADMIN PAT (secrets.ADMIN_PAT)
+#        The credential DOING the propagation. A static personal access token
+#        with write access to secrets/variables across the danielriddell21 repos
+#        (classic: "repo" scope; fine-grained: Secrets:write + Variables:write +
+#        Metadata:read on the target repos). Used because the default
+#        GITHUB_TOKEN cannot write secrets/variables to OTHER repositories.
+#
+# The shell logic lives in local composite actions under .github/actions/:
+#   * discover-homebrew-repos — list target repos as a JSON matrix
+#   * set-tap-variable        — write the TAP_APP_ID variable to one repo
+#   * set-tap-secret          — write the TAP_APP_PRIVATE_KEY secret to one repo
+# This workflow just wires them together and fans out with a matrix.
+
+name: Propagate tap App credentials
+
+on:
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "List target repos without writing anything"
+        type: boolean
+        default: true
+
+# Least privilege: this workflow's GITHUB_TOKEN only needs to read this repo
+# (to check out the local actions). All cross-repo writes use the ADMIN PAT.
+permissions:
+  contents: read
+
+jobs:
+  # Enumerate the repos to update (homebrew topic, minus this tap) and expose
+  # them as a matrix.
+  discover:
+    runs-on: ubuntu-latest
+    outputs:
+      repos: ${{ steps.discover.outputs.repos }}
+      list: ${{ steps.discover.outputs.list }}
+      count: ${{ steps.discover.outputs.count }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Discover target repos
+        id: discover
+        uses: ./.github/actions/discover-homebrew-repos
+        with:
+          token: ${{ secrets.ADMIN_PAT }}
+          owner: danielriddell21
+          exclude: ${{ github.repository }} # never propagate to the tap itself
+
+  # One job per target repo. Skipped automatically when no repos were found.
+  propagate:
+    needs: discover
+    if: ${{ needs.discover.outputs.count != '0' }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        repo: ${{ fromJSON(needs.discover.outputs.repos) }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # Variable: the tap App id (non-sensitive).
+      - name: Set TAP_APP_ID
+        uses: ./.github/actions/set-tap-variable
+        with:
+          token: ${{ secrets.ADMIN_PAT }}
+          repo: ${{ matrix.repo }}
+          app-id: ${{ vars.TAP_APP_ID }}
+          dry-run: ${{ inputs.dry_run }}
+
+      # Secret: the tap App private key (PEM), masked and piped via stdin.
+      - name: Set TAP_APP_PRIVATE_KEY
+        uses: ./.github/actions/set-tap-secret
+        with:
+          token: ${{ secrets.ADMIN_PAT }}
+          repo: ${{ matrix.repo }}
+          private-key: ${{ secrets.TAP_APP_PRIVATE_KEY }}
+          dry-run: ${{ inputs.dry_run }}
+
+  # Final job summary: how many repos were targeted and their names.
+  summary:
+    needs: [discover, propagate]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Write summary
+        shell: bash
+        env:
+          COUNT: ${{ needs.discover.outputs.count }}
+          LIST: ${{ needs.discover.outputs.list }}
+          DRY_RUN: ${{ inputs.dry_run }}
+          RESULT: ${{ needs.propagate.result }}
+        run: |
+          {
+            echo "## Tap credential propagation"
+            echo ""
+            if [ "$DRY_RUN" = "true" ]; then
+              echo "**Mode:** dry-run (no changes written)"
+            else
+              echo "**Mode:** apply (propagate result: ${RESULT})"
+            fi
+            echo ""
+            echo "Targeted **${COUNT}** repo(s):"
+            if [ -n "${LIST:-}" ]; then
+              echo "$LIST" | sed 's/^/- /'
+            else
+              echo "_none_"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
