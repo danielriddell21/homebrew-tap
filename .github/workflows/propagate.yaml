@@ -28,7 +28,7 @@ on:
   workflow_dispatch:
     inputs:
       dry_run:
-        description: "List target repos without writing anything"
+        description: "Dry-run?"
         type: boolean
         default: true
 
