@@ -4,11 +4,11 @@ cask "rubix" do
 
   on_macos do
     on_intel do
-      sha256 "fbac9f9f639bf1eedf9322ddc0c46b3de58908e22ba2cb6986fc64c493c99a89"
+      sha256 "472f13dec2c55006d8352e1d2e073e4507cd788f7de4ba6507947ed4d8a99761"
       url "https://github.com/danielriddell21/rubix/releases/download/v#{version}/rubix-gui_#{version}_darwin_amd64.tar.gz"
     end
     on_arm do
-      sha256 "dce80e1e3c39cbfc798ecd272e9847ae20a3f42899083a2ba378294c23bb9112"
+      sha256 "20a2fd2f0539a0dc96d4e255b21498838863ad6974b2834def930647dc921352"
       url "https://github.com/danielriddell21/rubix/releases/download/v#{version}/rubix-gui_#{version}_darwin_arm64.tar.gz"
     end
   end
