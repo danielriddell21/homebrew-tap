@@ -5,21 +5,21 @@
 class Galapagos < Formula
   desc "Visualize learning algorithms in real time (CLI + browser demo)"
   homepage "https://github.com/danielriddell21/galapagos"
-  version "0.0.2"
+  version "0.0.3"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/danielriddell21/galapagos/releases/download/v0.0.2/galapagos_0.0.2_darwin_amd64.tar.gz"
-      sha256 "68f23e4fc029d5c8467814c8969415026cd12deacba3405d815ec9972de79272"
+      url "https://github.com/danielriddell21/galapagos/releases/download/v0.0.3/galapagos_0.0.3_darwin_amd64.tar.gz"
+      sha256 "b5e1e0e86a52260a002d597be82e31b5677fb6b00eb7226e8c337e42a88567cb"
 
       define_method(:install) do
         bin.install "galapagos"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/danielriddell21/galapagos/releases/download/v0.0.2/galapagos_0.0.2_darwin_arm64.tar.gz"
-      sha256 "8451af740253f0a4fdbed571a103c64c94b25c807c9a5b18061f7dc2fd6db755"
+      url "https://github.com/danielriddell21/galapagos/releases/download/v0.0.3/galapagos_0.0.3_darwin_arm64.tar.gz"
+      sha256 "7a7ae77f2f9700bd6a666e5eb1dba5e4af76015c23629e7a744b9a1bc7e0df39"
 
       define_method(:install) do
         bin.install "galapagos"
@@ -29,15 +29,15 @@ class Galapagos < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielriddell21/galapagos/releases/download/v0.0.2/galapagos_0.0.2_linux_amd64.tar.gz"
-      sha256 "40a6d7577aa4dab7ea3eb6b8de3fa40a35f83b18c6a75209bc88c249d0b0b0e2"
+      url "https://github.com/danielriddell21/galapagos/releases/download/v0.0.3/galapagos_0.0.3_linux_amd64.tar.gz"
+      sha256 "f41e6ea7a7254c4692e5f1abc949e33d7f3ecebf50f631ca77c349265b6480dc"
       define_method(:install) do
         bin.install "galapagos"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielriddell21/galapagos/releases/download/v0.0.2/galapagos_0.0.2_linux_arm64.tar.gz"
-      sha256 "da7ac257aafbd1a1843d52b29e2ffcf4b9d14eddd88e70d4fccd5f77819ffd5d"
+      url "https://github.com/danielriddell21/galapagos/releases/download/v0.0.3/galapagos_0.0.3_linux_arm64.tar.gz"
+      sha256 "b3927a6950af951bf4090ee937a6037373585f0e0d92558064acd5b801c59017"
       define_method(:install) do
         bin.install "galapagos"
       end
