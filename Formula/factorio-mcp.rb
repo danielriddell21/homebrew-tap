@@ -5,21 +5,21 @@
 class FactorioMcp < Formula
   desc "A Claude Code plugin that lets Claude play Factorio 2.0"
   homepage "https://github.com/danielriddell21/factorio-mcp"
-  version "0.0.1"
+  version "0.0.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/danielriddell21/factorio-mcp/releases/download/v0.0.1/factorio-mcp_0.0.1_darwin_amd64.tar.gz"
-      sha256 "66b58aa138e1b2b535314cdb49526b995e8a52e249c781d00687e20c017f3f03"
+      url "https://github.com/danielriddell21/factorio-mcp/releases/download/v0.0.2/factorio-mcp_0.0.2_darwin_amd64.tar.gz"
+      sha256 "addb94fb087044c27943f886eb44be03a85cc8650d330a3c2e5dde77704ff426"
 
       define_method(:install) do
         bin.install "factorio-mcp"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/danielriddell21/factorio-mcp/releases/download/v0.0.1/factorio-mcp_0.0.1_darwin_arm64.tar.gz"
-      sha256 "0f3ce4a1b3769f5862049f3ed5dc48cd5197d295440c3d1ad0c175fc239d862c"
+      url "https://github.com/danielriddell21/factorio-mcp/releases/download/v0.0.2/factorio-mcp_0.0.2_darwin_arm64.tar.gz"
+      sha256 "ad01d0d31199c9e3059ceafca2fb359657ae775c76e10144684549aaf0d2452b"
 
       define_method(:install) do
         bin.install "factorio-mcp"
@@ -29,18 +29,22 @@ class FactorioMcp < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielriddell21/factorio-mcp/releases/download/v0.0.1/factorio-mcp_0.0.1_linux_amd64.tar.gz"
-      sha256 "f20d073d971fddc678a15a33db039ec5c376389f6f201418c0ec34859a5b8847"
+      url "https://github.com/danielriddell21/factorio-mcp/releases/download/v0.0.2/factorio-mcp_0.0.2_linux_amd64.tar.gz"
+      sha256 "cac11d59f538830b2dcd088c0ae99cfaf8f4e8fa67139fe2cad4fd8e1bb35e77"
       define_method(:install) do
         bin.install "factorio-mcp"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielriddell21/factorio-mcp/releases/download/v0.0.1/factorio-mcp_0.0.1_linux_arm64.tar.gz"
-      sha256 "db5b451495b6a9328c17ee7c7b2b301460c9949edfc44249183710fb2125bcc3"
+      url "https://github.com/danielriddell21/factorio-mcp/releases/download/v0.0.2/factorio-mcp_0.0.2_linux_arm64.tar.gz"
+      sha256 "a3c5562666416099fbabd1119913ab480ab8ab0079113a5497267d1f1965d6e4"
       define_method(:install) do
         bin.install "factorio-mcp"
       end
     end
+  end
+
+  test do
+    system "#{bin}/factorio-mcp", "--version"
   end
 end
