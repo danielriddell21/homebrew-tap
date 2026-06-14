@@ -1,0 +1,56 @@
+name: Discover Homebrew repos
+description: >-
+  List repositories under an owner that carry the "homebrew" topic, optionally
+  excluding one repo. Emits a JSON array suitable for use as a job matrix.
+
+inputs:
+  token:
+    description: Token with Metadata:read across the owner's repos (e.g. an App token).
+    required: true
+  owner:
+    description: Account or org to enumerate.
+    required: true
+  exclude:
+    description: A single repo (owner/name) to drop from the results.
+    required: false
+    default: ""
+
+outputs:
+  repos:
+    description: Compact JSON array of nameWithOwner strings (feed to a matrix).
+    value: ${{ steps.list.outputs.repos }}
+  list:
+    description: Newline-separated nameWithOwner list (for human-readable output).
+    value: ${{ steps.list.outputs.list }}
+  count:
+    description: Number of repos discovered.
+    value: ${{ steps.list.outputs.count }}
+
+runs:
+  using: composite
+  steps:
+    - id: list
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.token }}
+        OWNER: ${{ inputs.owner }}
+        EXCLUDE: ${{ inputs.exclude }}
+      run: |
+        set -euo pipefail
+
+        gh repo list "$OWNER" --topic homebrew --limit 200 \
+          --json nameWithOwner > repos.json
+
+        # Filter out the excluded repo with jq (--arg avoids any injection).
+        repos="$(jq -c --arg ex "$EXCLUDE" \
+          '[.[].nameWithOwner | select(. != $ex)]' repos.json)"
+        count="$(jq 'length' <<<"$repos")"
+        list="$(jq -r '.[]' <<<"$repos")"
+
+        {
+          echo "repos=$repos"
+          echo "count=$count"
+          echo "list<<__EOF__"
+          echo "$list"
+          echo "__EOF__"
+        } >> "$GITHUB_OUTPUT"

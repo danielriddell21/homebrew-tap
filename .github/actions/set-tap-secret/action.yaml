@@ -1,0 +1,46 @@
+name: Set tap secret on a repo
+description: >-
+  Write the tap App private key to a single repo as the TAP_APP_PRIVATE_KEY
+  secret. The PEM is masked and piped via stdin so it never reaches the logs.
+
+inputs:
+  token:
+    description: Token with Secrets:write on the target repo.
+    required: true
+  repo:
+    description: Target repo as owner/name.
+    required: true
+  private-key:
+    description: Tap App private key (PEM) to store as the TAP_APP_PRIVATE_KEY secret.
+    required: true
+  dry-run:
+    description: When "true", only report what would change and write nothing.
+    required: false
+    default: "false"
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.token }}
+        REPO: ${{ inputs.repo }}
+        TAP_APP_PRIVATE_KEY: ${{ inputs.private-key }}
+        DRY_RUN: ${{ inputs.dry-run }}
+      run: |
+        set -euo pipefail
+
+        # Safety net: mask the PEM even if it ever surfaces in a log line.
+        echo "::add-mask::${TAP_APP_PRIVATE_KEY}"
+
+        echo "Setting TAP_APP_PRIVATE_KEY on ${REPO}"
+
+        if [ "$DRY_RUN" = "true" ]; then
+          echo "  [dry-run] would set secret TAP_APP_PRIVATE_KEY"
+          exit 0
+        fi
+
+        # Pipe the PEM via stdin so it is never an argument or echoed.
+        printf '%s' "$TAP_APP_PRIVATE_KEY" \
+          | gh secret set TAP_APP_PRIVATE_KEY --repo "$REPO"
+        echo "  updated"
