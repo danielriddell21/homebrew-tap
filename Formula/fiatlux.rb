@@ -5,21 +5,21 @@
 class Fiatlux < Formula
   desc "Let there be light."
   homepage "https://github.com/danielriddell21/fiat-lux"
-  version "0.0.1"
+  version "0.0.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/danielriddell21/fiat-lux/releases/download/v0.0.1/fiatlux_0.0.1_macos_x86_64.tar.gz"
-      sha256 "8245e332074891d0527f3d11f7a7a3bf64b47e58a109c51f616b3a3013954e4f"
+      url "https://github.com/danielriddell21/fiat-lux/releases/download/v0.0.2/fiatlux_0.0.2_macos_x86_64.tar.gz"
+      sha256 "3d33f76a32b1fc985176a762e472bade2db60ee4b71d82367d6179d4945c948f"
 
       define_method(:install) do
         bin.install "fiatlux"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/danielriddell21/fiat-lux/releases/download/v0.0.1/fiatlux_0.0.1_macos_arm64.tar.gz"
-      sha256 "76782fbd12daf84f88bf15c1a6f976e32aa90f0688af10d6f979915585ee483c"
+      url "https://github.com/danielriddell21/fiat-lux/releases/download/v0.0.2/fiatlux_0.0.2_macos_arm64.tar.gz"
+      sha256 "118296920c2ced7f48b7c099e61bc3998f93bbcb4c49bc54ccea5b7a96c252a6"
 
       define_method(:install) do
         bin.install "fiatlux"
@@ -29,15 +29,15 @@ class Fiatlux < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielriddell21/fiat-lux/releases/download/v0.0.1/fiatlux_0.0.1_linux_x86_64.tar.gz"
-      sha256 "dbb0a94f106e1481dfca96824fdc160bf96bac0747e30cee291626deda5c667a"
+      url "https://github.com/danielriddell21/fiat-lux/releases/download/v0.0.2/fiatlux_0.0.2_linux_x86_64.tar.gz"
+      sha256 "2f5789a17eb62d67afbe751c59476113c02620889076d3306dfe9b8b29a824b6"
       define_method(:install) do
         bin.install "fiatlux"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielriddell21/fiat-lux/releases/download/v0.0.1/fiatlux_0.0.1_linux_arm64.tar.gz"
-      sha256 "3f7bddc1eea3a48a31f9a5d8383e7205c9cdc7df4a1fb710d70325a6a068ee91"
+      url "https://github.com/danielriddell21/fiat-lux/releases/download/v0.0.2/fiatlux_0.0.2_linux_arm64.tar.gz"
+      sha256 "0b72c77930d3c35495846ac4e195b4fcdecb276865d685a27cba44c36ecb76b9"
       define_method(:install) do
         bin.install "fiatlux"
       end
