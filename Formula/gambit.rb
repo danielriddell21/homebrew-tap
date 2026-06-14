@@ -11,7 +11,7 @@ class Gambit < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/danielriddell21/gambit/releases/download/v0.0.1/gambit_0.0.1_darwin_amd64.tar.gz"
-      sha256 "1f02d9513a615eea13d1a889b681e3aab30c6c4d2a4cc12d068bb33b622ec575"
+      sha256 "54570733720ece3ed2b75d440ef77c3715afe894445f2682bce0c51b96fba2a6"
 
       define_method(:install) do
         bin.install "gambit"
@@ -19,7 +19,7 @@ class Gambit < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/danielriddell21/gambit/releases/download/v0.0.1/gambit_0.0.1_darwin_arm64.tar.gz"
-      sha256 "3fff68657ccd9090fdbcfa5d7912447df5ad1fb43d303645a27fee3c0379e9e5"
+      sha256 "596c893e707dabfb511ebbd061f53dc6ec17216816b095f754bb6ba0f12f27f4"
 
       define_method(:install) do
         bin.install "gambit"
@@ -30,14 +30,14 @@ class Gambit < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/danielriddell21/gambit/releases/download/v0.0.1/gambit_0.0.1_linux_amd64.tar.gz"
-      sha256 "5f271c336abba8f180bd97f08cfc5f21c9aa970c2019cc8d12cd4b5f1fcda5ee"
+      sha256 "0788100c2c0a859a48f8f6ae690fb08de35482a10b6a7e025be242bfd54330ce"
       define_method(:install) do
         bin.install "gambit"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/danielriddell21/gambit/releases/download/v0.0.1/gambit_0.0.1_linux_arm64.tar.gz"
-      sha256 "e6c35d198427ab90ec736671c0995715b75483056732463ca44ca87f6cfa1d85"
+      sha256 "a530293830a650bf95122a4fdd49fa6162a9962a67ab30fb8f61a6edb2383f37"
       define_method(:install) do
         bin.install "gambit"
       end
