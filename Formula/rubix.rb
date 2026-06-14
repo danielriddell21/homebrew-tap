@@ -11,7 +11,7 @@ class Rubix < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/danielriddell21/rubix/releases/download/v0.0.1/rubix_0.0.1_darwin_amd64.tar.gz"
-      sha256 "30eb54a2274563b5970bd1ea24af1c19c74dd01d29cc915b58a37fac9d3fd7e0"
+      sha256 "5ec2dcc5bff2b973d9b7b78b3a60b332c4772f577f2792e62ea90a44d15deadb"
 
       define_method(:install) do
         bin.install "rubix"
@@ -19,7 +19,7 @@ class Rubix < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/danielriddell21/rubix/releases/download/v0.0.1/rubix_0.0.1_darwin_arm64.tar.gz"
-      sha256 "ab5d6df36fe1af6553ba521593220c499bd8f4a08b032e828edc103611fbb33d"
+      sha256 "c1d6026bbe6d2cdcdfffe2e2528013e9e959300af0c60bb3cc118f9a88fa1674"
 
       define_method(:install) do
         bin.install "rubix"
@@ -30,14 +30,14 @@ class Rubix < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/danielriddell21/rubix/releases/download/v0.0.1/rubix_0.0.1_linux_amd64.tar.gz"
-      sha256 "088fb75ab7523ba317a2317cf2b791a7abfb24ea8c7bc007e154ff4b0266871b"
+      sha256 "ab3fbc771ddbf6eb59e914da4a01d17d25247ead4a9c344ed27130f98441b745"
       define_method(:install) do
         bin.install "rubix"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/danielriddell21/rubix/releases/download/v0.0.1/rubix_0.0.1_linux_arm64.tar.gz"
-      sha256 "96eb262754e4aae2b8373fff022e676a34a0d308a83321367ca432f020e87c4c"
+      sha256 "c1ec3e1be3a00e3d734bd5e874935567d10770da1e5bd01ec19787abb72b211d"
       define_method(:install) do
         bin.install "rubix"
       end
