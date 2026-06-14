@@ -1,0 +1,42 @@
+name: Set tap variable on a repo
+description: >-
+  Write the (non-sensitive) tap App id to a single repo as the TAP_APP_ID
+  variable. The matching TAP_APP_PRIVATE_KEY secret is handled separately by
+  the secrets-sync step, since variables are not secrets.
+
+inputs:
+  token:
+    description: Token with Variables:write on the target repo.
+    required: true
+  repo:
+    description: Target repo as owner/name.
+    required: true
+  app-id:
+    description: Tap App ID to store as the TAP_APP_ID variable.
+    required: true
+  dry-run:
+    description: When "true", only report what would change and write nothing.
+    required: false
+    default: "false"
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.token }}
+        REPO: ${{ inputs.repo }}
+        TAP_APP_ID: ${{ inputs.app-id }}
+        DRY_RUN: ${{ inputs.dry-run }}
+      run: |
+        set -euo pipefail
+
+        echo "Setting TAP_APP_ID on ${REPO}"
+
+        if [ "$DRY_RUN" = "true" ]; then
+          echo "  [dry-run] would set variable TAP_APP_ID"
+          exit 0
+        fi
+
+        gh variable set TAP_APP_ID --repo "$REPO" --body "$TAP_APP_ID"
+        echo "  updated"
