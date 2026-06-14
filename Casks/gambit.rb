@@ -4,11 +4,11 @@ cask "gambit" do
 
   on_macos do
     on_intel do
-      sha256 "ab718fe0f99e75d2ddb7984900a552f3c44e60e9d9c470d69963b82a9ceea1b9"
+      sha256 "0630d5540f5991e311f4ae37ecff812075a481de83b409de559153db83fcd985"
       url "https://github.com/danielriddell21/gambit/releases/download/v#{version}/gambit-gui_#{version}_darwin_amd64.tar.gz"
     end
     on_arm do
-      sha256 "6000100aac7c053c56c458b0b18ae22b56b2cd0cfbca61da32e1fc8c37672e4e"
+      sha256 "28227a56026610061848f4eae487a3c466acb494085b936a6aa4374d72eb1da5"
       url "https://github.com/danielriddell21/gambit/releases/download/v#{version}/gambit-gui_#{version}_darwin_arm64.tar.gz"
     end
   end
