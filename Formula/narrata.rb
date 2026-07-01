@@ -5,21 +5,21 @@
 class Narrata < Formula
   desc "An embedded, local-first narration runtime for Go"
   homepage "https://github.com/danielriddell21/narrata"
-  version "0.1.0"
+  version "0.1.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/danielriddell21/narrata/releases/download/v0.1.0/narrata_0.1.0_darwin_amd64.tar.gz"
-      sha256 "32f591301a86019ea198a0acbb777b02c423a99fd280233ad28607c2a36977fc"
+      url "https://github.com/danielriddell21/narrata/releases/download/v0.1.1/narrata_0.1.1_darwin_amd64.tar.gz"
+      sha256 "fa9be9aecc9952afef093a63314ec2c3754c477cdf2b9d74e1468cf15eb85bd6"
 
       define_method(:install) do
         bin.install "narrata"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/danielriddell21/narrata/releases/download/v0.1.0/narrata_0.1.0_darwin_arm64.tar.gz"
-      sha256 "6ca30d860647b2ae963553e7b85598de2fc90ad355d0daf9b8bf7e342a34526c"
+      url "https://github.com/danielriddell21/narrata/releases/download/v0.1.1/narrata_0.1.1_darwin_arm64.tar.gz"
+      sha256 "51192edb2d3f12428a5041dc291ff52461a3f1303d3bd4fcd48d62bba7ffa486"
 
       define_method(:install) do
         bin.install "narrata"
@@ -29,15 +29,15 @@ class Narrata < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielriddell21/narrata/releases/download/v0.1.0/narrata_0.1.0_linux_amd64.tar.gz"
-      sha256 "815928abae4edd2c823fc57a076c0d7e8265505f17f317184483ab91083be356"
+      url "https://github.com/danielriddell21/narrata/releases/download/v0.1.1/narrata_0.1.1_linux_amd64.tar.gz"
+      sha256 "b9ba37d83ccda974b811cd341de965349c48d0bab930273e746f88b11a269b76"
       define_method(:install) do
         bin.install "narrata"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielriddell21/narrata/releases/download/v0.1.0/narrata_0.1.0_linux_arm64.tar.gz"
-      sha256 "f8f8225d87f119004a741723e5cf54361bd084fc537736655dac8271e18690ee"
+      url "https://github.com/danielriddell21/narrata/releases/download/v0.1.1/narrata_0.1.1_linux_arm64.tar.gz"
+      sha256 "45dfc393fb5e2905c79dc3ae15d4a80b84ac25433d8304c85375fcdfa90bfd5f"
       define_method(:install) do
         bin.install "narrata"
       end
