@@ -5,21 +5,21 @@
 class Unum < Formula
   desc "A unified developer tool suite — JSON analysis, type generation, and more"
   homepage "https://github.com/danielriddell21/unum"
-  version "1.7.0"
+  version "1.7.1"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/danielriddell21/unum/releases/download/v1.7.0/unum_1.7.0_darwin_amd64.tar.gz"
-      sha256 "4a5b3308385b19c4dc10e348d6b5b90e537bbcb3ccee4b9c3c3f0e875254f652"
+      url "https://github.com/danielriddell21/unum/releases/download/v1.7.1/unum_1.7.1_darwin_amd64.tar.gz"
+      sha256 "4607a1bc4c6f02ac277581f953005b3db6cdb082328575ea3a7b31c59ed376ea"
 
       define_method(:install) do
         bin.install "unum"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/danielriddell21/unum/releases/download/v1.7.0/unum_1.7.0_darwin_arm64.tar.gz"
-      sha256 "19644f1bbfe85aab05fd730a0cd8921ad25b198aff9d399792019e4ac0400ecf"
+      url "https://github.com/danielriddell21/unum/releases/download/v1.7.1/unum_1.7.1_darwin_arm64.tar.gz"
+      sha256 "18aa7497c2f06a39c8631bd3303bb7612e90a57c20036ae3cccaf625d39253b0"
 
       define_method(:install) do
         bin.install "unum"
@@ -29,15 +29,15 @@ class Unum < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielriddell21/unum/releases/download/v1.7.0/unum_1.7.0_linux_amd64.tar.gz"
-      sha256 "a995fbf79bfaf6325f6a989ce5dea9d25670fbfd9db3720de67b2e77622b3a1f"
+      url "https://github.com/danielriddell21/unum/releases/download/v1.7.1/unum_1.7.1_linux_amd64.tar.gz"
+      sha256 "dae419c0fd3b9bb42ecc775505ee690a4d9a86a518d58f03bd1e4e72f89004d7"
       define_method(:install) do
         bin.install "unum"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielriddell21/unum/releases/download/v1.7.0/unum_1.7.0_linux_arm64.tar.gz"
-      sha256 "af6c5d76758172e7d41c028918e119e5248c5de1a5f5dc913306781c8734cf5d"
+      url "https://github.com/danielriddell21/unum/releases/download/v1.7.1/unum_1.7.1_linux_arm64.tar.gz"
+      sha256 "5de7f1e052b773228c4b9bb86013dbb37a32efa00d3293f5a6ec38514fdb062a"
       define_method(:install) do
         bin.install "unum"
       end
