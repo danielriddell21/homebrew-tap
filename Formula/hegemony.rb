@@ -5,21 +5,21 @@
 class Hegemony < Formula
   desc "A territory-war simulation where competing algorithms fight to control a shared grid."
   homepage "https://github.com/danielriddell21/hegemony"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/danielriddell21/hegemony/releases/download/v0.1.0/hegemony_0.1.0_darwin_amd64.tar.gz"
-      sha256 "369f6eae1d1a95541a4fe5221027729e57ee9b097f502f2c1b85d7e2c29bce70"
+      url "https://github.com/danielriddell21/hegemony/releases/download/v0.2.0/hegemony_0.2.0_darwin_amd64.tar.gz"
+      sha256 "0a93d0bfc7f90cbf5a5833715603c3de4365497c43fa9ace4fe59945887b4665"
 
       define_method(:install) do
         bin.install "hegemony"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/danielriddell21/hegemony/releases/download/v0.1.0/hegemony_0.1.0_darwin_arm64.tar.gz"
-      sha256 "94cb428a209464903e45d95e92b0eb01dbe6681e2edeb9822cfac17bc2df2e24"
+      url "https://github.com/danielriddell21/hegemony/releases/download/v0.2.0/hegemony_0.2.0_darwin_arm64.tar.gz"
+      sha256 "c825a19c1cf4736df5f3d6ea5b75fb1e10edf7798c757158d8dcf8311a16d549"
 
       define_method(:install) do
         bin.install "hegemony"
@@ -29,15 +29,15 @@ class Hegemony < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielriddell21/hegemony/releases/download/v0.1.0/hegemony_0.1.0_linux_amd64.tar.gz"
-      sha256 "05b2caf6f612616c707d11062b40db6ff7cab1cd67a4a5ebdedb9784dadcc242"
+      url "https://github.com/danielriddell21/hegemony/releases/download/v0.2.0/hegemony_0.2.0_linux_amd64.tar.gz"
+      sha256 "410a371cd9967e00e07c0580247dd6d1c5fed0c310903ebd651e117f41bb8986"
       define_method(:install) do
         bin.install "hegemony"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielriddell21/hegemony/releases/download/v0.1.0/hegemony_0.1.0_linux_arm64.tar.gz"
-      sha256 "20c6cf4fdeb33dd66af95c1b1bd3df133ba245bce1630520dee10b780145248e"
+      url "https://github.com/danielriddell21/hegemony/releases/download/v0.2.0/hegemony_0.2.0_linux_arm64.tar.gz"
+      sha256 "27bc17a1818411c7a1d40982e72a09666f3e8473f43fbac07ab97b5508cb17c1"
       define_method(:install) do
         bin.install "hegemony"
       end
