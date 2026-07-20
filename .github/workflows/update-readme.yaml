@@ -1,0 +1,49 @@
+# Keep README.md's Formulae/Casks tables in sync with Formula/*.rb and Casks/*.rb.
+#
+# Formula/cask files are pushed to this repo automatically by each project's
+# GoReleaser release workflow (see README.md), not via PRs, so there's no PR
+# to review before merge — this workflow regenerates the tables and commits
+# the diff straight to main whenever new files land or existing ones change.
+
+name: Update README
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "Formula/**"
+      - "Casks/**"
+      - "scripts/update_readme.py"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-readme
+  cancel-in-progress: false
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Regenerate README tables
+        run: python3 scripts/update_readme.py
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet -- README.md; then
+            echo "README.md already up to date."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "docs: update README formula/cask tables"
+          git push origin HEAD:main
