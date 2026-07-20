@@ -35,6 +35,7 @@ Then install any formula or cask below (the tap prefix lets you skip `brew tap`)
 | `galapagos` | `brew install --cask danielriddell21/tap/galapagos` | [galapagos](https://github.com/danielriddell21/galapagos) |
 | `gambit` | `brew install --cask danielriddell21/tap/gambit` | [gambit](https://github.com/danielriddell21/gambit) |
 | `hegemony` | `brew install --cask danielriddell21/tap/hegemony` | [hegemony](https://github.com/danielriddell21/hegemony) |
+| `nemesis` | `brew install --cask danielriddell21/tap/nemesis` | [nemesis](https://github.com/danielriddell21/nemesis) |
 | `pandemonium` | `brew install --cask danielriddell21/tap/pandemonium` | [pandemonium](https://github.com/danielriddell21/pandemonium) |
 | `rubix` | `brew install --cask danielriddell21/tap/rubix` | [rubix](https://github.com/danielriddell21/rubix) |
 | `vivarium` | `brew install --cask danielriddell21/tap/vivarium` | [vivarium](https://github.com/danielriddell21/vivarium) |
