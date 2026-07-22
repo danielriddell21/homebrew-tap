@@ -5,20 +5,20 @@
 class Vivarium < Formula
   desc "Evolving 2D ecosystem simulation; use 'vivarium headless' for batch runs"
   homepage "https://github.com/danielriddell21/vivarium"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
   depends_on :linux
 
   if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-    url "https://github.com/danielriddell21/vivarium/releases/download/v0.1.0/vivarium_0.1.0_linux_amd64.tar.gz"
-    sha256 "add55f9c7be8ba28ff4e6a021b562f82ceae9af44c1c55596af4399938a91dbc"
+    url "https://github.com/danielriddell21/vivarium/releases/download/v0.2.0/vivarium_0.2.0_linux_amd64.tar.gz"
+    sha256 "497741cd62c8bb6b856cd6b3e5c889487e45c638019a0ea075df91c4ebc5fe2f"
     define_method(:install) do
       bin.install "vivarium"
     end
   end
   if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/danielriddell21/vivarium/releases/download/v0.1.0/vivarium_0.1.0_linux_arm64.tar.gz"
-    sha256 "97167e3c9dd7a76d502920e252affb2fa1b6e1b4da9518c6c546f43bd3ff2c0e"
+    url "https://github.com/danielriddell21/vivarium/releases/download/v0.2.0/vivarium_0.2.0_linux_arm64.tar.gz"
+    sha256 "949ffdc88ae49aca6704e1d6d1f3ad9f899cd3fbffb6f7817bae5c604a8ae121"
     define_method(:install) do
       bin.install "vivarium"
     end
