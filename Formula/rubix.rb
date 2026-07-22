@@ -5,21 +5,21 @@
 class Rubix < Formula
   desc "A Rubik's cube solver with nine strategies and a 3D visualizer"
   homepage "https://github.com/danielriddell21/rubix"
-  version "0.2.0"
+  version "0.3.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/danielriddell21/rubix/releases/download/v0.2.0/rubix_0.2.0_darwin_amd64.tar.gz"
-      sha256 "1bb8c9ea1f65816b8bf253d48a73961d437ed507dbd1f1f8a4f33e4bebd8d65f"
+      url "https://github.com/danielriddell21/rubix/releases/download/v0.3.0/rubix_0.3.0_darwin_amd64.tar.gz"
+      sha256 "7236e4b07c1d923cfe65ed9bb015cdf81307599508203d5c6c31b127ec254a5b"
 
       define_method(:install) do
         bin.install "rubix"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/danielriddell21/rubix/releases/download/v0.2.0/rubix_0.2.0_darwin_arm64.tar.gz"
-      sha256 "72268ff2390285302bb78b3b6d5850d667d48b364d97916afb1c6211f32b6ef7"
+      url "https://github.com/danielriddell21/rubix/releases/download/v0.3.0/rubix_0.3.0_darwin_arm64.tar.gz"
+      sha256 "7dc9e3f8b77c208b05ea5617b87b6447126992c064bb7b9d8c5275eb6cdbacd0"
 
       define_method(:install) do
         bin.install "rubix"
@@ -29,15 +29,15 @@ class Rubix < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielriddell21/rubix/releases/download/v0.2.0/rubix_0.2.0_linux_amd64.tar.gz"
-      sha256 "6cab44f6e5721e3b102d7f9a1643055c64b5bccd36bd00e6fd3fe54188cdbc81"
+      url "https://github.com/danielriddell21/rubix/releases/download/v0.3.0/rubix_0.3.0_linux_amd64.tar.gz"
+      sha256 "9dab8c17f15117e0c3c8aeef6a24bf07f4464ac0ebf21096303ad0715912e0c6"
       define_method(:install) do
         bin.install "rubix"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielriddell21/rubix/releases/download/v0.2.0/rubix_0.2.0_linux_arm64.tar.gz"
-      sha256 "d9ad92c1aeedcdbb9bc542c91a6f5fcbf9157971ff10738e0059656e4ac501a1"
+      url "https://github.com/danielriddell21/rubix/releases/download/v0.3.0/rubix_0.3.0_linux_arm64.tar.gz"
+      sha256 "68d1afee2bf88297d0ad15cf4f605e35563c54cb0b8761cb3b9d1312fa9f4d20"
       define_method(:install) do
         bin.install "rubix"
       end
