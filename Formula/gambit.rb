@@ -5,21 +5,21 @@
 class Gambit < Formula
   desc "Two chess agents play each other, logged in algebraic notation"
   homepage "https://github.com/danielriddell21/gambit"
-  version "0.5.0"
+  version "0.6.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/danielriddell21/gambit/releases/download/v0.5.0/gambit_0.5.0_darwin_amd64.tar.gz"
-      sha256 "d6567073befd4ef47b144d85b02c1051d0dc7970d16e1ef8140d2e4c5fa96dc4"
+      url "https://github.com/danielriddell21/gambit/releases/download/v0.6.0/gambit_0.6.0_darwin_amd64.tar.gz"
+      sha256 "fbac7b1c748c94dba5c7f2c49dc835dbb64fee5b0c6d8908fd2c4e3629b4a624"
 
       define_method(:install) do
         bin.install "gambit"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/danielriddell21/gambit/releases/download/v0.5.0/gambit_0.5.0_darwin_arm64.tar.gz"
-      sha256 "a3149bfafdf8b28207d04c5661a81966160ef23e5824e523ea18a1b672886e7f"
+      url "https://github.com/danielriddell21/gambit/releases/download/v0.6.0/gambit_0.6.0_darwin_arm64.tar.gz"
+      sha256 "f53e24eac99e6c1687b7ec0050f420c96f3c63e392e22346e6e1c10af840621b"
 
       define_method(:install) do
         bin.install "gambit"
@@ -29,15 +29,15 @@ class Gambit < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielriddell21/gambit/releases/download/v0.5.0/gambit_0.5.0_linux_amd64.tar.gz"
-      sha256 "1d35193a31a6b300812741fc45af93fd0c7f17bf1fefc5bfbeaa5e9d7626007a"
+      url "https://github.com/danielriddell21/gambit/releases/download/v0.6.0/gambit_0.6.0_linux_amd64.tar.gz"
+      sha256 "4e0f9c6dd495f8900170ad1223529d0cdd9459a26c1ae7cc97d0ef0670ce39a2"
       define_method(:install) do
         bin.install "gambit"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielriddell21/gambit/releases/download/v0.5.0/gambit_0.5.0_linux_arm64.tar.gz"
-      sha256 "66257006cd053e23f863a3f7e10790ab1932cc784c254e7349d70beba4810aa5"
+      url "https://github.com/danielriddell21/gambit/releases/download/v0.6.0/gambit_0.6.0_linux_arm64.tar.gz"
+      sha256 "276f124eff65e8b44cbe241b2f9cfa0b1bb51193b3a664d6a459e619e3a8bd81"
       define_method(:install) do
         bin.install "gambit"
       end
