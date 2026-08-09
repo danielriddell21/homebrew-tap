@@ -32,6 +32,7 @@ Then install any formula or cask below (the tap prefix lets you skip `brew tap`)
 <!-- CASKS_TABLE_START -->
 | Cask | Install | Source |
 | --- | --- | --- |
+| `autobahn` | `brew install --cask danielriddell21/tap/autobahn` | [autobahn](https://github.com/danielriddell21/autobahn) |
 | `galapagos` | `brew install --cask danielriddell21/tap/galapagos` | [galapagos](https://github.com/danielriddell21/galapagos) |
 | `gambit` | `brew install --cask danielriddell21/tap/gambit` | [gambit](https://github.com/danielriddell21/gambit) |
 | `hegemony` | `brew install --cask danielriddell21/tap/hegemony` | [hegemony](https://github.com/danielriddell21/hegemony) |
