@@ -20,6 +20,7 @@ Then install any formula or cask below (the tap prefix lets you skip `brew tap`)
 | `galapagos` | `brew install danielriddell21/tap/galapagos` | [galapagos](https://github.com/danielriddell21/galapagos) |
 | `gambit` | `brew install danielriddell21/tap/gambit` | [gambit](https://github.com/danielriddell21/gambit) |
 | `hegemony` | `brew install danielriddell21/tap/hegemony` | [hegemony](https://github.com/danielriddell21/hegemony) |
+| `merkelbrot` | `brew install danielriddell21/tap/merkelbrot` | [merkelbrot](https://github.com/danielriddell21/merkelbrot) |
 | `narrata` | `brew install danielriddell21/tap/narrata` | [narrata](https://github.com/danielriddell21/narrata) |
 | `rubix` | `brew install danielriddell21/tap/rubix` | [rubix](https://github.com/danielriddell21/rubix) |
 | `toolshed` | `brew install danielriddell21/tap/toolshed` | [toolshed](https://github.com/danielriddell21/toolshed) |
