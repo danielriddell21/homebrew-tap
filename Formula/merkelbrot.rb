@@ -5,21 +5,21 @@
 class Merkelbrot < Formula
   desc "Zoomable, fractal-style visualiser for Merkle DAGs and trees"
   homepage "https://github.com/danielriddell21/merkelbrot"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/danielriddell21/merkelbrot/releases/download/v0.1.0/merkelbrot_0.1.0_darwin_amd64.tar.gz"
-      sha256 "1d2ffb5991df8eb21719eaf02d2ef560da10b69fde6c2ce0432a77dde744fb68"
+      url "https://github.com/danielriddell21/merkelbrot/releases/download/v0.2.0/merkelbrot_0.2.0_darwin_amd64.tar.gz"
+      sha256 "30a3e7ea4f17d1cf24d5d3af4e36a3ab05fe94694d027f8aaa6452636df15588"
 
       define_method(:install) do
         bin.install "merkelbrot"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/danielriddell21/merkelbrot/releases/download/v0.1.0/merkelbrot_0.1.0_darwin_arm64.tar.gz"
-      sha256 "6ad0ef36a4413d49772087467201c3f636b8ad887c49c40dbe0081e6575e76cf"
+      url "https://github.com/danielriddell21/merkelbrot/releases/download/v0.2.0/merkelbrot_0.2.0_darwin_arm64.tar.gz"
+      sha256 "c8fe6545792e70153b3b2813f0c68232e61fde6d03dac7dcacae6da51e7b2e4b"
 
       define_method(:install) do
         bin.install "merkelbrot"
@@ -29,15 +29,15 @@ class Merkelbrot < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielriddell21/merkelbrot/releases/download/v0.1.0/merkelbrot_0.1.0_linux_amd64.tar.gz"
-      sha256 "f4209007313d868eec8ec1af55845aa9e1025e6b6db119d42798c591160d64f9"
+      url "https://github.com/danielriddell21/merkelbrot/releases/download/v0.2.0/merkelbrot_0.2.0_linux_amd64.tar.gz"
+      sha256 "944f10e561b8677cd5a62290f1e931f11bb3ab078f58cc61e03ab6c6be334cf2"
       define_method(:install) do
         bin.install "merkelbrot"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/danielriddell21/merkelbrot/releases/download/v0.1.0/merkelbrot_0.1.0_linux_arm64.tar.gz"
-      sha256 "92d58f9356d08be5e34dce89a906c230dbb1f502e3fa404ef1d5378835ca24d7"
+      url "https://github.com/danielriddell21/merkelbrot/releases/download/v0.2.0/merkelbrot_0.2.0_linux_arm64.tar.gz"
+      sha256 "c87c4088a46c43e84198f5fa2a735eb6a0fc25059168e222f5b02319e87ba967"
       define_method(:install) do
         bin.install "merkelbrot"
       end
