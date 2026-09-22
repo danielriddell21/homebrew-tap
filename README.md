@@ -21,7 +21,7 @@ Then install any formula or cask below (the tap prefix lets you skip `brew tap`)
 | `gambit` | `brew install danielriddell21/tap/gambit` | [gambit](https://pkg.go.dev/github.com/danielriddell21/gambit) |
 | `hegemony` | `brew install danielriddell21/tap/hegemony` | [hegemony](https://github.com/danielriddell21/hegemony) |
 | `letsgo` | `brew install danielriddell21/tap/letsgo` | [letsgo](https://github.com/danielriddell21/letsgo) |
-| `merkelbrot` | `brew install danielriddell21/tap/merkelbrot` | [merkelbrot](https://github.com/danielriddell21/merkelbrot) |
+| `merkelbrot` | `brew install danielriddell21/tap/merkelbrot` | [merkelbrot](https://pkg.go.dev/github.com/danielriddell21/merkelbrot) |
 | `narrata` | `brew install danielriddell21/tap/narrata` | [narrata](https://github.com/danielriddell21/narrata) |
 | `rubix` | `brew install danielriddell21/tap/rubix` | [rubix](https://pkg.go.dev/github.com/danielriddell21/rubix) |
 | `toolshed` | `brew install danielriddell21/tap/toolshed` | [toolshed](https://github.com/danielriddell21/toolshed) |
