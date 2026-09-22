@@ -23,7 +23,7 @@ Then install any formula or cask below (the tap prefix lets you skip `brew tap`)
 | `letsgo` | `brew install danielriddell21/tap/letsgo` | [letsgo](https://github.com/danielriddell21/letsgo) |
 | `merkelbrot` | `brew install danielriddell21/tap/merkelbrot` | [merkelbrot](https://github.com/danielriddell21/merkelbrot) |
 | `narrata` | `brew install danielriddell21/tap/narrata` | [narrata](https://github.com/danielriddell21/narrata) |
-| `rubix` | `brew install danielriddell21/tap/rubix` | [rubix](https://github.com/danielriddell21/rubix) |
+| `rubix` | `brew install danielriddell21/tap/rubix` | [rubix](https://pkg.go.dev/github.com/danielriddell21/rubix) |
 | `toolshed` | `brew install danielriddell21/tap/toolshed` | [toolshed](https://github.com/danielriddell21/toolshed) |
 | `unum` | `brew install danielriddell21/tap/unum` | [unum](https://github.com/danielriddell21/unum) |
 | `vivarium` | `brew install danielriddell21/tap/vivarium` | [vivarium](https://github.com/danielriddell21/vivarium) |
