@@ -18,7 +18,7 @@ Then install any formula or cask below (the tap prefix lets you skip `brew tap`)
 | `factorio-mcp` | `brew install danielriddell21/tap/factorio-mcp` | [factorio-mcp](https://github.com/danielriddell21/factorio-mcp) |
 | `fiatlux` | `brew install danielriddell21/tap/fiatlux` | [fiat-lux](https://github.com/danielriddell21/fiat-lux) |
 | `galapagos` | `brew install danielriddell21/tap/galapagos` | [galapagos](https://github.com/danielriddell21/galapagos) |
-| `gambit` | `brew install danielriddell21/tap/gambit` | [gambit](https://github.com/danielriddell21/gambit) |
+| `gambit` | `brew install danielriddell21/tap/gambit` | [gambit](https://pkg.go.dev/github.com/danielriddell21/gambit) |
 | `hegemony` | `brew install danielriddell21/tap/hegemony` | [hegemony](https://github.com/danielriddell21/hegemony) |
 | `letsgo` | `brew install danielriddell21/tap/letsgo` | [letsgo](https://github.com/danielriddell21/letsgo) |
 | `merkelbrot` | `brew install danielriddell21/tap/merkelbrot` | [merkelbrot](https://github.com/danielriddell21/merkelbrot) |
