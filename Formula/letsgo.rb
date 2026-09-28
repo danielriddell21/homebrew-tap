@@ -7,22 +7,22 @@ class Letsgo < Formula
   on_macos do
     on_intel do
       url "https://github.com/danielriddell21/letsgo/releases/download/v0.24.0/letsgo_0.24.0_darwin_amd64.tar.gz"
-      sha256 "e465d16db4c1c7f78cd767dfb30b08e27f9129c7e049390e60ef72c086362d29"
+      sha256 "200459f7510705940287ab4ee31c2c000b17f1eeaa5a0c2df64d5edc22535972"
     end
     on_arm do
       url "https://github.com/danielriddell21/letsgo/releases/download/v0.24.0/letsgo_0.24.0_darwin_arm64.tar.gz"
-      sha256 "96fa90306f7353d6229f053b71c7ca0b899961636446c5cdd9eaa89826807ae9"
+      sha256 "2fedc65909d84846cf91470d4848023849edf3d9e9a5922a20cc710e16d8c68e"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/danielriddell21/letsgo/releases/download/v0.24.0/letsgo_0.24.0_linux_amd64.tar.gz"
-      sha256 "64c92a26cd490a97387095f0bf445c1cf912c823bc78188951941c6669324ada"
+      sha256 "16fafe120fad438d12c42d1f38f17b07233c8abdfe9470fba668e5d758f2c549"
     end
     on_arm do
       url "https://github.com/danielriddell21/letsgo/releases/download/v0.24.0/letsgo_0.24.0_linux_arm64.tar.gz"
-      sha256 "80fc5773d68c2686c7fe7eca8c99b66a7a3dd69345fe55da54f4b9f030725dce"
+      sha256 "41230220116c616a6a976fd2cd237f4fb0d63173d61742ac9ea52d872839d3b2"
     end
   end
 
