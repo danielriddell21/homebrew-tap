@@ -2,28 +2,28 @@
 class LetsgoATNext < Formula
   desc "just a release tool"
   homepage "https://github.com/danielriddell21/letsgo"
-  version "0.37.1-rc.1"
+  version "0.37.1-rc.2"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/danielriddell21/letsgo/releases/download/v0.37.1-rc.1/letsgo_0.37.1-rc.1_darwin_amd64.tar.gz"
-      sha256 "057a63c9307a77b23daf526a3d72f40b9e49106199442d260a682cc1548f4747"
+      url "https://github.com/danielriddell21/letsgo/releases/download/v0.37.1-rc.2/letsgo_0.37.1-rc.2_darwin_amd64.tar.gz"
+      sha256 "0350e63973ebd922c0e6332e5db707516dff270341414a216e9127af992a3f62"
     end
     on_arm do
-      url "https://github.com/danielriddell21/letsgo/releases/download/v0.37.1-rc.1/letsgo_0.37.1-rc.1_darwin_arm64.tar.gz"
-      sha256 "2b21c4b7dd89be90625380930f12f9b4e9175ae97cdd4a6e4baee4b7367ac9f4"
+      url "https://github.com/danielriddell21/letsgo/releases/download/v0.37.1-rc.2/letsgo_0.37.1-rc.2_darwin_arm64.tar.gz"
+      sha256 "8e9aa8ed6a34689c8218d6e67ba94a26e13d723483742393bb3e2c517fdf6670"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/danielriddell21/letsgo/releases/download/v0.37.1-rc.1/letsgo_0.37.1-rc.1_linux_amd64.tar.gz"
-      sha256 "30f5e4b7c3b16d980d45e5c8a59c4cdabd14fef16e756491c2d64cab806440d6"
+      url "https://github.com/danielriddell21/letsgo/releases/download/v0.37.1-rc.2/letsgo_0.37.1-rc.2_linux_amd64.tar.gz"
+      sha256 "15535860a9fd6e653438304b070f726763fc8c652c63bfc5f26bba9e0fc484be"
     end
     on_arm do
-      url "https://github.com/danielriddell21/letsgo/releases/download/v0.37.1-rc.1/letsgo_0.37.1-rc.1_linux_arm64.tar.gz"
-      sha256 "b0b02f1a681eaea23afaa329f76eddb8b2ff5f417ae0a84a48425637aeea3481"
+      url "https://github.com/danielriddell21/letsgo/releases/download/v0.37.1-rc.2/letsgo_0.37.1-rc.2_linux_arm64.tar.gz"
+      sha256 "f7d29f1cd4b16c5fe03ba53c5bc08d779c62bdbe0f683b6c910a9a76ac0dd60d"
     end
   end
 
@@ -35,6 +35,6 @@ class LetsgoATNext < Formula
     # letsgo verifies before publishing that the binary reports this version,
     # so asserting it here catches a formula pointing at the wrong release
     # rather than merely proving the binary starts.
-    assert_match "0.37.1-rc.1", shell_output("#{bin}/letsgo --version")
+    assert_match "0.37.1-rc.2", shell_output("#{bin}/letsgo --version")
   end
 end
