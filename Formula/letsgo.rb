@@ -2,28 +2,28 @@
 class Letsgo < Formula
   desc "just a release tool"
   homepage "https://github.com/danielriddell21/letsgo"
-  version "0.39.0"
+  version "0.40.0"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/danielriddell21/letsgo/releases/download/v0.39.0/letsgo_0.39.0_darwin_amd64.tar.gz"
-      sha256 "7fb99147b1b6e3bc36fb7e2a826b60f02fed33b73e161570c7afbd5af0adeb87"
+      url "https://github.com/danielriddell21/letsgo/releases/download/v0.40.0/letsgo_0.40.0_darwin_amd64.tar.gz"
+      sha256 "658f8d439bdc3c3329a87e314f7993d45c862eb129cd64c8e73c650800a755b4"
     end
     on_arm do
-      url "https://github.com/danielriddell21/letsgo/releases/download/v0.39.0/letsgo_0.39.0_darwin_arm64.tar.gz"
-      sha256 "0b898b07564e67df83ed6e552d41c0cbb5caa64e57c3ee2c438f3e653ed7ed3e"
+      url "https://github.com/danielriddell21/letsgo/releases/download/v0.40.0/letsgo_0.40.0_darwin_arm64.tar.gz"
+      sha256 "97cb51ecf4bf2769f3bd0ad8bd7c071a814aa234efbd8b84430ffcbe4a30ca6b"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/danielriddell21/letsgo/releases/download/v0.39.0/letsgo_0.39.0_linux_amd64.tar.gz"
-      sha256 "d89b47348dc44e3b23c3484535e4729c8322a118776a2c707b5ebe453d7db480"
+      url "https://github.com/danielriddell21/letsgo/releases/download/v0.40.0/letsgo_0.40.0_linux_amd64.tar.gz"
+      sha256 "e76b5584f7acb83bb9192187532c611bbcc24d1481447ca450f111c1d0c9cbe6"
     end
     on_arm do
-      url "https://github.com/danielriddell21/letsgo/releases/download/v0.39.0/letsgo_0.39.0_linux_arm64.tar.gz"
-      sha256 "926b6c76cf92e0297a4693d74c5a6c0b99941d617e065944102e08ce06cf5d61"
+      url "https://github.com/danielriddell21/letsgo/releases/download/v0.40.0/letsgo_0.40.0_linux_arm64.tar.gz"
+      sha256 "78f26e66d2114c2561cb3dd508a09182427b981f30ddea4fdf8440b7d774664c"
     end
   end
 
@@ -35,6 +35,6 @@ class Letsgo < Formula
     # letsgo verifies before publishing that the binary reports this version,
     # so asserting it here catches a formula pointing at the wrong release
     # rather than merely proving the binary starts.
-    assert_match "0.39.0", shell_output("#{bin}/letsgo --version")
+    assert_match "0.40.0", shell_output("#{bin}/letsgo --version")
   end
 end
