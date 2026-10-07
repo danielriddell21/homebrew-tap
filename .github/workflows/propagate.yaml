@@ -47,7 +47,7 @@ jobs:
       list: ${{ steps.discover.outputs.list }}
       count: ${{ steps.discover.outputs.count }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Discover target repos
         id: discover
@@ -67,7 +67,7 @@ jobs:
       matrix:
         repo: ${{ fromJSON(needs.discover.outputs.repos) }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       # Variable: the tap App id (non-sensitive).
       - name: Set TAP_APP_ID
