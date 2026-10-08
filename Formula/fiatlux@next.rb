@@ -2,28 +2,28 @@
 class FiatluxATNext < Formula
   desc "just an agent in a void"
   homepage "https://github.com/danielriddell21/fiat-lux"
-  version "0.1.8"
+  version "0.1.9-rc.1"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/danielriddell21/fiat-lux/releases/download/v0.1.8/fiatlux_0.1.8_darwin_amd64.tar.gz"
-      sha256 "3515a706c7ea5961b6f87850df1f05da2c5e46e7be69ecee014631e92b280f01"
+      url "https://github.com/danielriddell21/fiat-lux/releases/download/v0.1.9-rc.1/fiatlux_0.1.9-rc.1_darwin_amd64.tar.gz"
+      sha256 "7436b88dbe8b5f66c2ae5ade96156ee11729917beb57fcdbc8980ddc4058c70c"
     end
     on_arm do
-      url "https://github.com/danielriddell21/fiat-lux/releases/download/v0.1.8/fiatlux_0.1.8_darwin_arm64.tar.gz"
-      sha256 "1639231cb40c8331b848b567b208f81349fbbfd20f3ea996165bed145792f540"
+      url "https://github.com/danielriddell21/fiat-lux/releases/download/v0.1.9-rc.1/fiatlux_0.1.9-rc.1_darwin_arm64.tar.gz"
+      sha256 "2707b55f6a540e7828a936b5f010d73dd4a7dd1a8cc4cdcf8bbfb040eb2f116b"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/danielriddell21/fiat-lux/releases/download/v0.1.8/fiatlux_0.1.8_linux_amd64.tar.gz"
-      sha256 "617c21443bda04f449fe637d9cfca73436a64ff965b841132930c1bb08c3b4cd"
+      url "https://github.com/danielriddell21/fiat-lux/releases/download/v0.1.9-rc.1/fiatlux_0.1.9-rc.1_linux_amd64.tar.gz"
+      sha256 "876710b184fb3600a9cbefd92b87431c3ea75425171c74177e0f5bcde2d7ca96"
     end
     on_arm do
-      url "https://github.com/danielriddell21/fiat-lux/releases/download/v0.1.8/fiatlux_0.1.8_linux_arm64.tar.gz"
-      sha256 "342ef4c0ee55c642ec5f840076be9a4e1eea1000b4b4314dbee83ac09a18816a"
+      url "https://github.com/danielriddell21/fiat-lux/releases/download/v0.1.9-rc.1/fiatlux_0.1.9-rc.1_linux_arm64.tar.gz"
+      sha256 "ff64703c7897e92ce3e45578de31bc746ae511ac4c280a50b03c9ca4255e9c76"
     end
   end
 
@@ -35,6 +35,6 @@ class FiatluxATNext < Formula
     # letsgo verifies before publishing that the binary reports this version,
     # so asserting it here catches a formula pointing at the wrong release
     # rather than merely proving the binary starts.
-    assert_match "0.1.8", shell_output("#{bin}/fiatlux --version")
+    assert_match "0.1.9-rc.1", shell_output("#{bin}/fiatlux --version")
   end
 end
