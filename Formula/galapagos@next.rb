@@ -2,28 +2,28 @@
 class GalapagosATNext < Formula
   desc "just a learning visualiser"
   homepage "https://github.com/danielriddell21/galapagos"
-  version "0.6.2"
+  version "0.6.3-rc.1"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/danielriddell21/galapagos/releases/download/v0.6.2/galapagos_0.6.2_darwin_amd64.tar.gz"
-      sha256 "3e3ef83173114991f1ef1e9d69241eb4780e1fb7b137bc3f26f6e84ace4b3435"
+      url "https://github.com/danielriddell21/galapagos/releases/download/v0.6.3-rc.1/galapagos_0.6.3-rc.1_darwin_amd64.tar.gz"
+      sha256 "6b494532fa72de05332915966e2842f4d4597d0fb82fcda6a9c8144c46e40085"
     end
     on_arm do
-      url "https://github.com/danielriddell21/galapagos/releases/download/v0.6.2/galapagos_0.6.2_darwin_arm64.tar.gz"
-      sha256 "1b06a21be4aa631232c9fff5e0cf2cc35099563f6a2e7a2118ecefbb8cb18152"
+      url "https://github.com/danielriddell21/galapagos/releases/download/v0.6.3-rc.1/galapagos_0.6.3-rc.1_darwin_arm64.tar.gz"
+      sha256 "878bd37fe3a1e82012487341249643b3e391df83cf7d49330fa764477ac762ce"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/danielriddell21/galapagos/releases/download/v0.6.2/galapagos_0.6.2_linux_amd64.tar.gz"
-      sha256 "553847eeee9b34e1d56e8030128a4e633d8a774d39b413897d777319d8731b61"
+      url "https://github.com/danielriddell21/galapagos/releases/download/v0.6.3-rc.1/galapagos_0.6.3-rc.1_linux_amd64.tar.gz"
+      sha256 "6198cb2bf3fc2735056db300b06bfde2e6bc70e64f19d2daa4cef595a40623d8"
     end
     on_arm do
-      url "https://github.com/danielriddell21/galapagos/releases/download/v0.6.2/galapagos_0.6.2_linux_arm64.tar.gz"
-      sha256 "dc602d60df0757b845b998f79f23b6a7b02e04f7aff3eb9c00a26fb55c3a23a3"
+      url "https://github.com/danielriddell21/galapagos/releases/download/v0.6.3-rc.1/galapagos_0.6.3-rc.1_linux_arm64.tar.gz"
+      sha256 "815a9abc1ffe454cd98b74fdec4d0d488ef06ebd92faa836cfbaa4ab3a327b49"
     end
   end
 
@@ -41,6 +41,6 @@ class GalapagosATNext < Formula
     # letsgo verifies before publishing that the binary reports this version,
     # so asserting it here catches a formula pointing at the wrong release
     # rather than merely proving the binary starts.
-    assert_match "0.6.2", shell_output("#{bin}/galapagos --version")
+    assert_match "0.6.3-rc.1", shell_output("#{bin}/galapagos --version")
   end
 end
