@@ -33,6 +33,7 @@ Then install any formula or cask below (the tap prefix lets you skip `brew tap`)
 | `unum` | `brew install danielriddell21/tap/unum` | [unum](https://github.com/danielriddell21/unum) |
 | `unum@next` | `brew install danielriddell21/tap/unum@next` | [unum](https://github.com/danielriddell21/unum) |
 | `vivarium` | `brew install danielriddell21/tap/vivarium` | [vivarium](https://github.com/danielriddell21/vivarium) |
+| `vivarium@next` | `brew install danielriddell21/tap/vivarium@next` | [vivarium](https://github.com/danielriddell21/vivarium) |
 <!-- FORMULAE_TABLE_END -->
 
 ### Casks (native GUI — macOS)
