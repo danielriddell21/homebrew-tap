@@ -2,28 +2,28 @@
 class UnumNext < Formula
   desc "just a dev tool"
   homepage "https://github.com/danielriddell21/unum"
-  version "1.9.6-rc.2"
+  version "1.9.6"
   license "MIT"
 
   on_macos do
     on_intel do
-      url "https://github.com/danielriddell21/unum/releases/download/v1.9.6-rc.2/unum_1.9.6-rc.2_darwin_amd64.tar.gz"
-      sha256 "447b915d171394c15ff138825a1d01a4f4ee44f777faa20d5fe7afa3be4aaf9c"
+      url "https://github.com/danielriddell21/unum/releases/download/v1.9.6/unum_1.9.6_darwin_amd64.tar.gz"
+      sha256 "ea28744252f9638b6966b80631c23085b51c49e0732a41b4deda5ce14d488a52"
     end
     on_arm do
-      url "https://github.com/danielriddell21/unum/releases/download/v1.9.6-rc.2/unum_1.9.6-rc.2_darwin_arm64.tar.gz"
-      sha256 "ad70649594ef456391ae365d8ebca88306e8fb328b799383bf5cffb64bb53c2d"
+      url "https://github.com/danielriddell21/unum/releases/download/v1.9.6/unum_1.9.6_darwin_arm64.tar.gz"
+      sha256 "16f63611ff1f8c5511af74212ead79f4fa9a59ef8a13883565981b490f0c7bcd"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/danielriddell21/unum/releases/download/v1.9.6-rc.2/unum_1.9.6-rc.2_linux_amd64.tar.gz"
-      sha256 "2a94de9458fae9f897bae941c668eed0f194659e58d409a86986e3d5db000c5b"
+      url "https://github.com/danielriddell21/unum/releases/download/v1.9.6/unum_1.9.6_linux_amd64.tar.gz"
+      sha256 "72cf37a4ab36e05d3f4f303ae3235d87f4faa7573bf5efb8e1ee95aca583c7c7"
     end
     on_arm do
-      url "https://github.com/danielriddell21/unum/releases/download/v1.9.6-rc.2/unum_1.9.6-rc.2_linux_arm64.tar.gz"
-      sha256 "5271cf694f2e9e3f05585f1c5322cf22a1989015eda846654752a5983eb3e3bc"
+      url "https://github.com/danielriddell21/unum/releases/download/v1.9.6/unum_1.9.6_linux_arm64.tar.gz"
+      sha256 "0b486f04d96ebdc9218324311ca0c20bbc460600dad2b44f1b7ad66d19057e0b"
     end
   end
 
@@ -35,6 +35,6 @@ class UnumNext < Formula
     # letsgo verifies before publishing that the binary reports this version,
     # so asserting it here catches a formula pointing at the wrong release
     # rather than merely proving the binary starts.
-    assert_match "1.9.6-rc.2", shell_output("#{bin}/unum --version")
+    assert_match "1.9.6", shell_output("#{bin}/unum --version")
   end
 end
